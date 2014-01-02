@@ -1,0 +1,90 @@
+<%= render "pages/home" unless user_signed_in? %>
+
+<!--<h1 class="text-center">All Tones</h1>-->
+
+<div class="row">
+  <div id="pins" class="transitions-enabled">
+    
+    <% @pins.each do |pin| %>
+
+      <div class="box"> 
+        
+        <p>
+          <%= link_to pin do %>
+            <!--<img src="..." alt="..." class="img-circle">-->
+            <%= image_tag pin.user.profile_image.url(:thumb), class: "user-thumb img-circle", alt: "" %>
+            <strong><%= pin.user.name if pin.user %></strong>
+          <% end %>
+          <span class="pull-right time-ago text-muted">
+            <i class="fa fa-clock-o"></i> <%= time_ago_in_words(pin.updated_at) %>
+          </span>        
+        </p>
+
+        <div>  
+          <!-- Tone Settings Dropdown -->
+          <% if pin.user == current_user %>
+            <div class="actions btn-group">                        
+              <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-cog icon-md"></i>                
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to edit_pin_path(pin), class: "" do %>
+                    <i class="fa fa-pencil icon-md"></i> Edit
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to pin, class: "", method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fa fa-times icon-md"></i> Delete
+                  <% end %>
+                </li>
+              </ul>         
+            </div>
+          <% end %>      
+          
+          <!-- Image -->
+          <%= link_to pin, class: "play-box" do %>               
+            <div class="play-button"></div>
+            <div class="image img-rounded" style="background-image: url('<%= pin.image.url(:medium) %>;')"></div>
+          <% end %>  
+        </div> 
+        
+        <%= link_to pin, class: "btn btn-primary btn-lg btn-block btn-bottom" do %>
+          <% if pin.title == nil %>
+            Untitled
+          <% else %>
+            <%= truncate(pin.title, :length => 28) -%>            
+          <% end %>
+          <i class="fa fa-arrow-right icon-md pull-right"></i>
+        <% end %>
+
+        <div class="text-center options">          
+          <ul class="nav nav-justified">
+            <li><a href="#"><span class="fa fa-plus icon-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-share icon-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-smile-o icon-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-comment icon-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-ellipsis-h icon-lg"></span></a></li>                             
+          </ul>                                  
+        </div>  
+      </div>
+    <% end %> 
+  </div>
+</div>
+
+<div class="text-center">
+   <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
+</div>
+
+
+<!--<div class="row text-center">
+  <ul class="pagination">
+    <% if @pins.previous_page %>
+      <li><%= link_to "< ", params.merge(:page => @pins.previous_page ) %></li>
+    <% end %>
+    <li>Page <%= @pins.current_page %> of <%= @pins.total_pages %></li>
+    <% if @pins.next_page %>
+      <li><%= link_to ">", params.merge(:page => @pins.next_page ) %></li>
+    <% end %>
+  </ul>
+</div>-->

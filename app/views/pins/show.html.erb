@@ -1,0 +1,31 @@
+<%= link_to 'Back', pins_path %>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading text-center">
+				<%= image_tag @pin.image.url(:medium) %>
+			</div>
+			<div class="panel-body">
+				<p>
+					<%= link_to @pin do %>            
+	          <%= image_tag @pin.user.profile_image.url(:thumb), class: "user-thumb img-circle", alt: "" %>
+	          <strong><%= @pin.user.name if @pin.user %></strong>
+	        <% end %>
+					<span class="pull-right time-ago text-muted">
+	          <i class="fa fa-clock-o"></i> 
+	          <%= time_ago_in_words(@pin.updated_at) %>
+	        </span> 
+        </p> 
+
+				<p><%= @pin.title %></p>
+				<% if @pin.user == current_user %>				
+					<%= link_to edit_pin_path(@pin) do %>
+            <span class="glyphicon glyphicon-edit"></span>
+            Edit
+           <% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<div>
