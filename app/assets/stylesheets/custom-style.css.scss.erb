@@ -18,8 +18,16 @@ $body-bg: #ffffff;
 
 @import 'bootstrap';
 
-
-/* Ty Custom CSS */ 
+/* iPad portrait and below */
+@media (max-width: 768px) { 
+  .box {
+		margin: 0px;
+		width: 320px;
+	}
+	.navbar {
+		margin-bottom: 0px;	
+	}
+}
 
 body {
 
@@ -65,8 +73,12 @@ position: relative;
 .actions {
 position: absolute;
 z-index: 1000;
-top: 0;
-right: 0;
+top: 8px;
+right: 8px;
+}
+
+.btn-square {
+	padding: 8px 11px;
 }
 
 .btn.btn-dark {
@@ -175,16 +187,13 @@ width: 1%;
 height: 288px;
 }
 
-.fa {
-margin-top: 2px;
-}
-
-ul.navbar-nav li a {
+.navbar-collapse ul.navbar-nav li a {
 text-align: center;
+font-size: 22px;
 }
 
 body {
-padding-top: 55px;
+padding-top: 48px;
 font-size: 15px;
 }
 
@@ -250,4 +259,16 @@ line-height: auto;
 padding-top: 9px;
 padding-bottom: 11px;
 font-weight: bold;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+/*.vert-align {
+	vertical-align: middle;
+}*/
+
+.navbar-collapse li a span.text {
+
 }

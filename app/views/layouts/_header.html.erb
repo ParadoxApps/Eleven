@@ -27,24 +27,25 @@
 		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav navbar-right">
 		      <li>
-		      	<%= link_to root_path do%>
-		      		<i class="fa fa-home fa-fw icon-md"></i> Home
+		      	<%= link_to root_path, do%>
+		      		<span class="fa fa-home fa-fw icon-lg"></span> 
+		      		<span class="text">Home</span>
 						<% end %>
 		      </li>	      
 		      <li>
 		      	<%= link_to root_path do%>
-		      		<i class="fa fa-search fa-fw icon-md"></i> Discover
+		      		<i class="fa fa-search fa-fw icon-lg"></i> Discover
 						<% end %>
 		      </li>
 		      <% if user_signed_in? %>
 		      	<li>
 		      		<%= link_to root_path do%>
-		      			<i class="fa fa-book fa-fw icon-md"></i> Library
+		      			<i class="fa fa-book fa-fw icon-lg"></i> Library
 							<% end %>
 		      	</li>
 		      	<li>
 		      		<%= link_to edit_user_registration_path do %>		      		
-		      			<i class="fa fa-user fa-fw icon-md"></i> Profile							
+		      			<i class="fa fa-user fa-fw icon-lg"></i> Profile							
 							<% end %>
 		      	</li>
 		      	<!--<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>-->

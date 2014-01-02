@@ -13,7 +13,7 @@
           <!-- Tone Settings Dropdown -->
           <% if pin.user == current_user %>
             <div class="actions btn-group">                        
-              <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+              <button type="button" class="btn btn-dark dropdown-toggle btn-square" data-toggle="dropdown">
                 <i class="fa fa-cog icon-md"></i>                
               </button>
               <ul class="dropdown-menu">
@@ -46,33 +46,34 @@
           <% end %>
           <i class="fa fa-arrow-right icon-md pull-right"></i>
         <% end %>
+        
+        <div class="container">
+          <div class="user-section">
+            <%= link_to pin do %>              
+              <%= image_tag pin.user.profile_image.url(:thumb), class: "user-thumb img-circle", alt: "" %>
+              <strong><%= pin.user.name if pin.user %></strong>
+            <% end %>
+            <span class="pull-right time-ago text-muted">
+              <i class="fa fa-clock-o"></i> <%= time_ago_in_words(pin.updated_at) %>
+            </span>        
+          </div>
 
-        <div class="user-section">
-          <%= link_to pin do %>
-            <!--<img src="..." alt="..." class="img-circle">-->
-            <%= image_tag pin.user.profile_image.url(:thumb), class: "user-thumb img-circle", alt: "" %>
-            <strong><%= pin.user.name if pin.user %></strong>
-          <% end %>
-          <span class="pull-right time-ago text-muted">
-            <i class="fa fa-clock-o"></i> <%= time_ago_in_words(pin.updated_at) %>
-          </span>        
-        </div>
+          <div class="box-section retones">
+            <a><strong>33 retones</strong></a>
+          </div>
 
-        <div class="box-section retones">
-          <a><strong>33 retones</strong></a>
-        </div>
+          <div class="box-section likes">
+            <a><strong>26 people like this</strong></a>
+          </div>
 
-        <div class="box-section likes">
-          <a><strong>26 people like this</strong></a>
-        </div>
-
-        <div class="box-section comments">
-          <p>
-            <a><strong>David Riddle</strong></a> I'm going to use this sound.
-          </p>
-          <p>
-            <a><strong>Nick Groesch</strong></a> Bring up the gain a notch or two and bring down the tone dial on your guitar and this one is money!
-          </p>
+          <div class="box-section comments">
+            <p>
+              <a><strong>David Riddle</strong></a> I'm going to use this sound.
+            </p>
+            <p>
+              <a><strong>Nick Groesch</strong></a> Bring up the gain a notch or two and bring down the tone dial on your guitar and this one is money!
+            </p>
+          </div>
         </div>
 
         <div class="text-center options">          

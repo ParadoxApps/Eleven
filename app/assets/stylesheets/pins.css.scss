@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #pins {
 	margin: 0 auto;
 }
@@ -9,7 +10,20 @@
 .box {
 	margin: 10px;
 	width: 288px;
-	
+}
+
+/* iPad portrait and below */
+@media (max-width: 768px) { 
+  
+  .box {
+		margin: 0px;
+		width: 320px;
+	}
+
+	.navbar {
+		margin-bottom: 0px;	
+	}
+
 }
 
 .box .image {
