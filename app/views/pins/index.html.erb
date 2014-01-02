@@ -7,18 +7,7 @@
     
     <% @pins.each do |pin| %>
 
-      <div class="box"> 
-        
-        <p>
-          <%= link_to pin do %>
-            <!--<img src="..." alt="..." class="img-circle">-->
-            <%= image_tag pin.user.profile_image.url(:thumb), class: "user-thumb img-circle", alt: "" %>
-            <strong><%= pin.user.name if pin.user %></strong>
-          <% end %>
-          <span class="pull-right time-ago text-muted">
-            <i class="fa fa-clock-o"></i> <%= time_ago_in_words(pin.updated_at) %>
-          </span>        
-        </p>
+      <div class="box">       
 
         <div>  
           <!-- Tone Settings Dropdown -->
@@ -55,15 +44,43 @@
           <% else %>
             <%= truncate(pin.title, :length => 28) -%>            
           <% end %>
-          <i class="fa fa-arrow-right icon-md pull-right"></i>
+          <i class="fa fa-flask icon-md pull-right"></i>
         <% end %>
+
+        <div class="user-section">
+          <%= link_to pin do %>
+            <!--<img src="..." alt="..." class="img-circle">-->
+            <%= image_tag pin.user.profile_image.url(:thumb), class: "user-thumb img-circle", alt: "" %>
+            <strong><%= pin.user.name if pin.user %></strong>
+          <% end %>
+          <span class="pull-right time-ago text-muted">
+            <i class="fa fa-clock-o"></i> <%= time_ago_in_words(pin.updated_at) %>
+          </span>        
+        </div>
+
+        <div class="box-section retones">
+          <a><strong>33 retones</strong></a>
+        </div>
+
+        <div class="box-section likes">
+          <a><strong>26 people like this</strong></a>
+        </div>
+
+        <div class="box-section comments">
+          <p>
+            <a><strong>David Riddle</strong></a> I'm going to use this sound.
+          </p>
+          <p>
+            <a><strong>Nick Groesch</strong></a> Bring up the gain a notch or two and bring down the tone dial on your guitar and this one is money!
+          </p>
+        </div>
 
         <div class="text-center options">          
           <ul class="nav nav-justified">
-            <li><a href="#"><span class="fa fa-plus icon-lg"></span></a></li>
-            <li><a href="#"><span class="fa fa-share icon-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-plus icon-lg"></span></a></li>            
             <li><a href="#"><span class="fa fa-smile-o icon-lg"></span></a></li>
             <li><a href="#"><span class="fa fa-comment icon-lg"></span></a></li>
+            <li><a href="#"><span class="fa fa-share icon-lg"></span></a></li>
             <li><a href="#"><span class="fa fa-ellipsis-h icon-lg"></span></a></li>                             
           </ul>                                  
         </div>  
