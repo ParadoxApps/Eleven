@@ -20,7 +20,6 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-sass', '~> 4.0.2'
 gem 'rename', '~> 0.0.1'
-gem
 
 group :development, :test do
 	gem 'sqlite3'
