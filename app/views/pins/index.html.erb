@@ -38,13 +38,13 @@
           <% end %>  
         </div> 
         
-        <%= link_to pin, class: "btn btn-primary btn-lg btn-block btn-bottom" do %>
+        <%= link_to pin, class: "btn btn-primary btn-lg btn-block btn-bottom tone-title" do %>
           <% if pin.title == nil %>
             Untitled
           <% else %>
             <%= truncate(pin.title, :length => 28) -%>            
           <% end %>
-          <i class="fa fa-flask icon-md pull-right"></i>
+          <i class="fa fa-arrow-right icon-md pull-right"></i>
         <% end %>
 
         <div class="user-section">
