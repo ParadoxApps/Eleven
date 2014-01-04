@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ToneDial</title>
+  <title>Eleven</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header' %>
+	<%= render 'layouts/header' if user_signed_in? %>
 	<div class="container">
 		
 		<!-- alert message -->
@@ -17,7 +17,8 @@
 		<% end %>
 			
 		<!-- main content -->
-		<%= yield %>
+		<%= render "pages/home" unless user_signed_in? %>
+		<%= yield if user_signed_in? %>
 
 	</div>
 </body>
