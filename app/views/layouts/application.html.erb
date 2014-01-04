@@ -16,9 +16,8 @@
 			<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
 			
-		<!-- main content -->
-		<%= render "pages/home" unless user_signed_in? %>
-		<%= yield if user_signed_in? %>
+		<!-- main content -->		
+		<%= yield %>
 
 	</div>
 </body>
