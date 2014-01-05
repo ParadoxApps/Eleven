@@ -33,11 +33,11 @@
             <!-- Image -->
             <%= link_to pin, class: "play-box" do %>               
               <div class="play-button"></div>
-              <div class="image img-rounded" style="background-image: url('<%= pin.image.url(:medium) %>;')"></div>
+              <div class="image" style="background-image: url('<%= pin.image.url(:medium) %>;')"></div>
             <% end %>  
           </div> 
           
-          <%= link_to pin, class: "btn btn-primary btn-lg btn-block btn-bottom tone-title" do %>
+          <%= link_to pin, class: "btn btn-primary btn-lg btn-block btn-bottom tone-title not-round" do %>
             <% if pin.title == nil %>
               Untitled
             <% else %>
