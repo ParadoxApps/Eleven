@@ -8,21 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-	<%= render "pages/home" unless user_signed_in? %>
-
-	<% if	user_signed_in? %>
-	<%= render 'layouts/header' %>
-		<div class="container">		
-			<!-- alert message -->
-			<% flash.each do |name, msg| %>
-				<%= content_tag(:div, msg, class: "alert alert-info") %>
-			<% end %>
-				
-			<!-- main content -->		
-			<%= yield %>
-		</div>
+	
+	<% if current_page?(root_path) %>
+		<%= render "pages/home" unless user_signed_in? %>
 	<% end %>
+
+	<%= render 'layouts/header' if user_signed_in? %>
+	<div class="container">		
+		<!-- alert message -->
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-info") %>
+		<% end %>
+			
+		<!-- main content -->		
+		<%= yield %>
+	</div>
 
 </body>
 </html>

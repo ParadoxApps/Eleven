@@ -20,8 +20,8 @@ $grid-gutter-width: 20px;
 
 @import 'bootstrap';
 
-/* iPad portrait and below */
-@media (max-width: 768px) { 
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
 
   .box {
 		margin: 0px;
@@ -31,6 +31,20 @@ $grid-gutter-width: 20px;
 	.navbar {
 		margin-bottom: 0px;	
 	}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+	.home-logo {
+		padding: 120px 20px 10px 20px!important;		
+	}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { 
 
 }
 
@@ -52,6 +66,26 @@ and (orientation : landscape) {
 	}
 
 }
+/* iPhone Portrait Only */
+@media (max-width: 460px) {
+
+	.index-wrap {
+	background: #141414 url(<%= asset_data_uri "landing-bg.jpg" %>) no-repeat 125% 0px!important;
+	background-size: 120%!important;
+	}
+
+}
+
+@media (max-width: $screen-xs-max) {
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {	
+}
+@media (min-width: $screen-lg-min) { 
+}
+
+
 
 body {
 
@@ -307,7 +341,7 @@ outline: none;
 }
 
 .index-wrap {
-background-color: #141414;
+background: #141414 url(<%= asset_data_uri "landing-bg.jpg" %>) no-repeat top center;
 position: absolute;
 top: 0px;
 height: 100%;
