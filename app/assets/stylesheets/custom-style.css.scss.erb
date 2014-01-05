@@ -22,19 +22,33 @@ $grid-gutter-width: 20px;
 
 /* iPad portrait and below */
 @media (max-width: 768px) { 
+
   .box {
 		margin: 0px;
 		width: 320px;
 	}
+	
 	.navbar {
 		margin-bottom: 0px;	
 	}
+
 }
 
-@media (min-width: 320px) and (max-width: 568px) {
+/* iPhone Landscape Only */
+@media only screen 
+and (min-width : 460px)
+and (max-width : 767px) 
+and (orientation : landscape) {
 
-	.home-logo-img {
+	.home-logo {
+		width: 60%;
+		margin: 0 auto;
+		padding: 45px 20px 10px 20px!important;
+	}
+
+	.home-buttons {
 		width: 50%;
+		margin: 0 auto;
 	}
 
 }
@@ -325,4 +339,8 @@ height: 133px;
 
 .home-buttons {
 padding-bottom: 38px;
+}
+
+.lead {
+font-size: 19px;
 }
