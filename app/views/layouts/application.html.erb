@@ -8,12 +8,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
+	<%= render 'headers/index' if user_signed_in? %>
+
+	<%= render 'headers/signin' if current_page?(user_session) %>
+
 	<% if current_page?(root_path) %>
 		<%= render "pages/home" unless user_signed_in? %>
 	<% end %>
 
-	<%= render 'layouts/header' if user_signed_in? %>
 	<div class="container">		
 		<!-- alert message -->
 		<!--<% flash.each do |name, msg| %>
