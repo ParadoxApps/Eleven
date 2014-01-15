@@ -19,7 +19,7 @@ $navbar-default-border: none;
 $text-muted: #888888;
 $body-bg: #ffffff;
 $btn-font-weight: bold;
-/*$body-bg: #3b3b3b;*/
+$body-bg: #E5E5E5;
 $grid-gutter-width: 20px;
 
 @import 'bootstrap';
@@ -268,6 +268,7 @@ font-size: 22px;
 body {
 padding-top: 48px;
 font-size: 15px;
+height: 100%;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -404,10 +405,14 @@ border-radius: 0;
 }
 
 
+.padding-top-100 {
+	padding-top: 100px;
+}
+
 
 .form-signin {
-  max-width: 330px;
-  padding: 15px;
+  max-width: 100%;
+  padding: 0 0 0 0;
   margin: 0 auto;
 }
 .form-signin .form-signin-heading,
@@ -430,12 +435,13 @@ border-radius: 0;
   z-index: 2;
 }
 .form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  margin-bottom: -1px!important;
+  border-bottom-left-radius: 0!important;
+  border-bottom-right-radius: 0!important;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-bottom: 10px!important;
+  border-top-left-radius: 0!important;
+  border-top-right-radius: 0!important;
 }
+
