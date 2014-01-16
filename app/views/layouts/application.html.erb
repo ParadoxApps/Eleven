@@ -19,9 +19,9 @@
 
 	<div class="main-container container">		
 		<!-- alert message -->
-		<!--<% flash.each do |name, msg| %>
+		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-info") %>
-		<% end %>-->
+		<% end %>
 			
 		<!-- main content -->		
 		<%= yield %>

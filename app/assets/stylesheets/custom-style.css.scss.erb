@@ -19,7 +19,7 @@ $navbar-default-border: none;
 $text-muted: #888888;
 $body-bg: #ffffff;
 $btn-font-weight: bold;
-$body-bg: #E5E5E5;
+/*$body-bg: #E5E5E5;*/
 $grid-gutter-width: 20px;
 
 @import 'bootstrap';
@@ -101,7 +101,7 @@ color: #ffffff !important;
 width: 160px;
 position: absolute;
 left: 50%;
-margin-left: -80px;
+margin-left: -80px!important;
 padding-top: 11px;
 }
 
@@ -113,7 +113,7 @@ text-align: center;
 font-size: 22px;
 padding-top: 14px;
 width: 230px;
-margin-left: -115px;
+margin-left: -115px!important;
 }
 
 .box {
@@ -445,3 +445,18 @@ border-radius: 0;
   border-top-right-radius: 0!important;
 }
 
+body.sessions-new {
+background: #e5e5e5;
+}
+
+.shared-links a {
+	display: block;
+}
+
+.shared-links.text-center {
+padding-top: 25px;
+}
+
+.navbar-header {
+float: none;
+}
