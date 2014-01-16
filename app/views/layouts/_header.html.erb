@@ -1,0 +1,5 @@
+	<%= render 'headers/index' if user_signed_in? %>
+
+	<%= render 'headers/signin' if is_path?("/users/sign_in") %>
+
+	<%= render 'headers/signup' if is_path?("/users/sign_up") %>

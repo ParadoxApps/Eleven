@@ -6,18 +6,15 @@
 	  <%= devise_error_messages! %>
 
 	  <div class="form-group">
-	  	<%= f.label :name %>
-	  	<%= f.text_field :name, autofocus: true, class: "form-control input-lg" %>
+	  	<%= f.text_field :name, autofocus: true, placeholder: "Name", class: "form-control input-lg" %>
 		</div>
 
 	  <div class="form-group">
-	  	<%= f.label :email %>
-	  	<%= f.email_field :email, class: "form-control input-lg" %>
+	  	<%= f.email_field :email, class: "form-control input-lg",placeholder: "Email" %>
 		</div>
 
 	  <div class="form-group">
-	  	<%= f.label :password %>
-	  	<%= f.password_field :password, class: "form-control input-lg" %>
+	  	<%= f.password_field :password, class: "form-control input-lg", placeholder: "Password" %>
 		</div>
 
 	  <div class="form-group">
